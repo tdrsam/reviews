@@ -1,0 +1,24 @@
+In the html file (it would probably be a php file), the one that will be used as the actual web page, add this;
+(The php at the bottom may as well be added to this file as it only reads out the reviews when the 'Read Reviews' button is clicked)
+
+<button type="button" class="read">Read Reviews</button>
+
+<?php include ('display.php'); ?>                  // The code for this file is in another file in this repository
+
+<button type="button" class="write">Write Reviews</button>
+<form class="writeForm"method="post">
+<input type="text" required name="monicker" placeholder="Name">
+<textarea name="review" required maxlength="5000" placeholder="Leave your review here &#40;max 25,000 charachters&#41;"></textarea>
+<input type="submit" value="Submit">
+</form>
+
+<?php
+$dbc = mysqli::real_connect('localhost', 'USERNAME', 'PASSWORD');           // Values need to be changed on this line
+mysqli::select_db('DBNAME',$dbc);                                        // Values need to be changed on this line
+$monicker = $_POST['monicker'];
+$review = mysqli::real_escape_string ($_POST['review']);
+
+	$query = "INSERT INTO reviews 
+				(monicker, review, date) 
+				VALUES ('$monicker', '$review', 'CURDATE()');";
+?>
