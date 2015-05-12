@@ -1,0 +1,52 @@
+This is a basic layout for the buttons, tables, etc. The values may have to be changed.
+
+.read{
+	cursor:pointer;
+	height:100px;
+	width:200px;
+	margin:0 0 30px 50px;
+	background:black;
+	border: solid 1px black;
+	color:yellow;
+	font-size:1.5em;
+	font-weight:bold;
+	border-radius:8px;
+	float:left;
+	-webkit-box-shadow: 0 0 8px yellow;
+}
+.msg{display:none;}
+.displayReviews{display:none;}
+.write{
+	margin:0 0 30px 50px;
+	cursor:pointer;
+	height:100px;
+	width:200px;
+	background:black;
+	border: solid 1px black;
+	color:yellow;
+	font-size:1.5em;
+	font-weight:bold;
+	border-radius:8px;
+	float:left;
+	-webkit-box-shadow: 0 0 8px yellow;
+}
+.writeForm{
+	display:none;
+	margin-top:20px;
+}
+input[type=text]{
+	border:1px black solid;
+	height:35px;
+	width:80%;
+}
+textarea{
+	border:1px solid black;
+	height:70px;width:80%;
+}
+input[type=submit]{
+	border:1px solid darkorange;
+	border-radius:8px;
+	background:darkorange;
+	height:35px;
+	width:60%;
+}
