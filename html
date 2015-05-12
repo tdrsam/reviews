@@ -21,4 +21,5 @@ $review = mysqli::real_escape_string ($_POST['review']);
 	$query = "INSERT INTO reviews 
 				(monicker, review, date) 
 				VALUES ('$monicker', '$review', 'CURDATE()');";
+mysqli::close();
 ?>
