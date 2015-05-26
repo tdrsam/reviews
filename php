@@ -1,6 +1,7 @@
 This is the contents of the display.php file which is found in the html code as a php include.
-This code makes the reviews go into the database. This page will (obviously) need a database, but it's a very
-simple one consisting of one table (which could go in another db), of four columns;
+This brings the reviews from the database when a user clicks on the "Read Reviews" button.
+This page will (obviously) need a database, but it's a very simple one consisting of one table
+(which could go in another db), of four columns;
 (id[PK], monicker[varchar], review[text], date[date]).
 
 <?php
