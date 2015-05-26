@@ -15,13 +15,12 @@ In the html file (it would probably be a php file), the one that will be used as
 <?php
 $dbc = mysqli::real_connect('localhost', 'USERNAME', 'PASSWORD');           // Values need to be changed on this line
 mysqli::select_db('DBNAME',$dbc);                                        // Values need to be changed on this line
+$monicker = isset($_POST['monicker']) ? mysqli::real_escape_string ($_POST['monicker']) : '';
+$review = isset($_POST['review']) ? mysqli::real_escape_string ($_POST['review']) : '';
 if(isset($_POST['submit'])) {
-$monicker = mysqli::real_escape_string ($_POST['monicker']);
-$review = mysqli::real_escape_string ($_POST['review']);
-
-	$query = "INSERT INTO reviews 
-				(id, monicker, review, date) 
-				VALUES (DEFAULT,'$monicker', '$review', 'CURDATE()');";
+	$current_date = date('Y-m-d H:i:s');
+	$query = "INSERT INTO reviews (id, monicker, review, date) VALUES (DEFAULT,'$monicker', '$review', '$current_date');";
+	$result = mysqli::real_query($query)or die(mysqli::$error($dbc));
 }
 mysqli::close();
 ?>
